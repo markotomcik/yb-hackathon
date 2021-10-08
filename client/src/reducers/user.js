@@ -1,9 +1,11 @@
-const initialState = {};
-function userReducer(state = initialState, action) {
+const INIT_STATE = {};
+const user = (state = INIT_STATE, action) => {
   switch (action.type) {
     case 'SET_USER':
-      return { ...state, value: state.value + 1 }
+      return action.payload.user
     default:
       return state
   }
 }
+
+export default user;
