@@ -5,6 +5,7 @@ function App() {
     <div>
       hallo
       <ChatRoom />
+      {/* <ChatRoom chatHistory={chatHistory} /> */}
     </div>
   );
 }
