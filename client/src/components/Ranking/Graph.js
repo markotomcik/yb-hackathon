@@ -1,43 +1,31 @@
 import React from 'react'
-import { Bar } from 'react-chartjs-2'
+import {
+  
+  BarChart,
+  
+} from "recharts";
 
-
-
-const Graph = () => {
-  const arr = Array(32)
-  for (var i = 0; i < arr.length; i++) {
-    arr[i] = i;
-  }
+export default function Graph() {
+  const data = [
+    { name: "Facebook", users: 2000000000 },
+    { name: "Instagram", users: 1500000000 },
+    { name: "Twiter", users: 1000000000 },
+    { name: "Telegram", users: 500000000 },
+  ];
   return (
-    <div class="chartWrapper">
-      <div class="chartAreaWrapper">
-        <Bar
-          data={{
-            labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
-            datasets: [
-              {
-                label: '# of kms',
-                data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
-                backgroundColor: [
-                  'Green'
-                ],
-                borderColor: [
-                  'Green'
-                ],
-                barThickness: 50,
-                minBarLength: 2,
-                maxBarLength: 100,
-                barPercentage: 0.1
-              }
-            ]
+    <div>
+      <BarChart
+          width={500}
+          height={300}
+          data={data}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 80,
+            bottom: 5,
           }}
-          height={200}
-          width={15000}
-          
-        />
-      </div>
+          barSize={20}
+        ></BarChart>
     </div>
   )
 }
-
-export default Graph
