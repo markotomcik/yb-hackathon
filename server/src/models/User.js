@@ -3,6 +3,7 @@ const bcrypt = Promise.promisifyAll(require('bcrypt'))
 
 function hashPassword (user, option) {
   const SALT_FACTOR = 8
+  console.log(option)
 
   if (!user.changed('password')) {
     return
