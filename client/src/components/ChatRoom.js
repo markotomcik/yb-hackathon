@@ -1,13 +1,12 @@
+import { Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Message } from './Message';
 
-function ChatRoom() {
+function ChatRoom(props) {
   const [chats, setchats] = useState([]);
   const [username, setusername] = useState("");
   const [msg, setmsg] = useState([]);
-
-  console.log(chats);
 
   const submitMessage = (event) => () => {
     event.preventDefault();
@@ -18,6 +17,7 @@ function ChatRoom() {
 
   return (
     <div>
+      <Typography sx={{ textAlign: 'center', fontSize: '2rem' }}  >{props.user.email === "" ? "logged Out" : "logged In"}</Typography>
       <ul className="chats" ref={chats}>
         {
           chats.map((chat) => {
@@ -34,7 +34,7 @@ function ChatRoom() {
   )
 }
 const mapStateToProps = (state) => ({
-
+  user: state.user
 })
 
 const mapDispatchToProps = {

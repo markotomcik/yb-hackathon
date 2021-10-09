@@ -1,14 +1,7 @@
-
+import { loginPost, registerPost } from '../utils/utils'
 //
-//  REDUCER: SET USER
+//  REDUCER: LOGIN
 //
-
-export const setUser = user => ({
-  type: 'SET_USER',
-  payload: {
-    user
-  }
-})
 
 const loginRequest = () => ({
   type: 'LOGIN_REQUEST'
@@ -32,6 +25,35 @@ export const loginAction = (userLogin) => {
       dispatch(loginSuccess(res));
     } catch (e) {
       dispatch(loginFailure(e));
+    }
+  }
+}
+//
+//  REDUCER: REGISTER
+//
+
+const registerRequest = () => ({
+  type: 'REGISTER_REQUEST'
+});
+
+const registerSuccess = (response) => ({
+  type: 'REGISTER_SUCCESS',
+  payload: { response }
+});
+
+const registerFailure = (error) => ({
+  type: 'REGISTER_FAILURE',
+  payload: { error }
+});
+
+export const registerAction = (userRegister) => {
+  return async (dispatch) => {
+    try {
+      dispatch(registerRequest())
+      let res = await registerPost(userRegister);
+      dispatch(registerSuccess(res));
+    } catch (e) {
+      dispatch(registerFailure(e));
     }
   }
 }

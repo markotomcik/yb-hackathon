@@ -1,18 +1,21 @@
 import ChatRoom from "./components/ChatRoom";
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import Login from "./components/Login";
+import Register from "./components/Register";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Switch>
         <Route path="/Login">
           <Login />
+        </Route>
+        <Route path="/Register">
+          <Register />
         </Route>
         <Route path="/ChatRoom">
           <ChatRoom />
@@ -22,7 +25,7 @@ function App() {
           <Login />
         </Route>
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 }
 
