@@ -1,10 +1,9 @@
 module.exports = (sequelize, DataTypes) =>
   sequelize.define('Message', {
-    from: {
-      type: DataTypes.STRING,
-      allowNull: false
+    sender: {
+      type: DataTypes.STRING
     },
-    to: {
+    receiver: {
       type: DataTypes.STRING,
       allowNull: false
     },

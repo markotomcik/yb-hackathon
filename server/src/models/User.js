@@ -34,6 +34,9 @@ module.exports = (sequelize, DataTypes) => {
     lastname: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    socketId: {
+      type: DataTypes.STRING
     }
   }, {
     hooks: {
