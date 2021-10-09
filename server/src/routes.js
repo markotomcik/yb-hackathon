@@ -1,9 +1,8 @@
 const AuthenticationController = require('./controlers/AuthenticationController')
 const UserController = require('./controlers/UserController')
-const MessageController = require('./controlers/MessageController')
 
 const AuthenticationControllerPolicy = require('./policies/AutheticationControllerPolicy')
-const isAutheticated = require('./policies/isAuthenticated')
+const isAuthenticated = require('./policies/isAuthenticated')
 
 module.exports = (app) => {
   app.post('/register',
@@ -14,9 +13,6 @@ module.exports = (app) => {
     AuthenticationController.login)
 
   app.post('/user/:id/edit',
-    isAutheticated,
+    isAuthenticated,
     UserController.edit)
-
-  app.post('/messages',
-    MessageController.send)
 }

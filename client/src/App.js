@@ -6,6 +6,8 @@ import {
 } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import LeaderBoards from "./components/Ranking/LeaderBoards";
+import './App.css';
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         </Route>
         <Route path="/ChatRoom">
           <ChatRoom />
+          <LeaderBoards />
           {/* <ChatRoom chatHistory={chatHistory} /> */}
         </Route>
         <Route path="/">

@@ -9,7 +9,7 @@ import thunk from 'redux-thunk';
 const store = createStore(rootReducer, applyMiddleware(thunk));
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.StrictMode style={{ margin: '0', padding: '0' }}>
     <Provider store={store}>
       <App />
     </Provider>
