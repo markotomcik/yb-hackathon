@@ -8,7 +8,7 @@ module.exports = {
           id: req.params.id
         }
       })
-      res.send({ ...req.body, returned: !!user })
+      res.status(200).send({ ...req.body, returned: !!user })
     } catch (err) {
       res.status(500).send({
         error: 'Chyba pri úprave užívateľa.'
