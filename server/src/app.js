@@ -16,7 +16,7 @@ app.use(cors())
 require('./routes')(app)
 
 io.on('connection', function (socket) {
-  console.log('socket connected')
+  require('./sockets')(socket)
 })
 
 sequelize.sync()
