@@ -1,9 +1,10 @@
-import Ranking from "./components/Ranking/Ranking";
+import LeaderBoards from "./components/Ranking/LeaderBoards";
+import './App.css'
 
 function App() {
   return (
-    <div>
-      <div><Ranking/></div>
+    <div style= {{ margin:'0', padding:'0', height: '100%' }}>
+      <LeaderBoards />
     </div>
   );
 }
