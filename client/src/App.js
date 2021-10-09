@@ -1,10 +1,9 @@
-import ChatRoom from "./components/ChatRoom";
+import Ranking from "./components/Ranking/Ranking";
 
 function App() {
   return (
     <div>
-      hallo
-      <ChatRoom />
+      <div><Ranking/></div>
     </div>
   );
 }
