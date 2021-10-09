@@ -37,6 +37,11 @@ module.exports = (sequelize, DataTypes) => {
     },
     socketId: {
       type: DataTypes.STRING
+    },
+    distanceTraveled: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
     }
   }, {
     hooks: {
